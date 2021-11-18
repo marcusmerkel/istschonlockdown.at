@@ -3,18 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <title>Ist schon Lockdown?</title>
+    <link rel="stylesheet" type="text/css" href="index.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Patua+One&display=swap" rel="stylesheet">
 </head>
 <body>
+<div class="container">
     <h1 id="answer">Nein.</h1>
-    <script>
-      document.addEventListener('DOMContentLoaded', () => {
-        // let data = ["Salzburg", "Oberösterreich"];
-        let data = [];
-        if (data.length > 0) {
+</div>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    // let data = [];
+    let data = ["Salzburg", "Oberösterreich"]; // bei "jein" hier die Bundesländer spezifizieren
+    let lockdown = "jein"; // hier eingeben "ja", "jein" oder "nein"
 
+    const answer = document.querySelector('#answer');
+
+    if (lockdown === "jein") {
+      answer.innerHTML = "Jein.";
+      if (data.length > 0) {
+        let text = "Derweil nur in ";
+        for (let i = 0; i < data.length; i++) {
+          text = text + data[i];
+          if (i === data.length - 1) {
+            text = text + ".";
+          } else if (i === data.length - 2) {
+            text = text + " und ";
+          } else {
+            text = text + ", ";
+          }
         }
-      })
+        const subtitle = document.createElement('h2');
+        subtitle.innerHTML = text;
+        document.querySelector('.container').appendChild(subtitle);
+      }
+    } else if (lockdown === "ja") {
+      answer.innerHTML = "Ja.";
+    }
+  })
 
-    </script>
+</script>
+<script data-name="BMC-Widget" data-cfasync="false" src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js"
+        data-id="istlockdown.at" data-description="Support me on Buy me a coffee!"
+        data-message="Danke für Deinen Besuch! Wir würden uns sehr über einen kleinen Beitrag freuen! :-)"
+        data-color="#BD5FFF" data-position="Right" data-x_margin="18" data-y_margin="18"></script>
 </body>
 </html>

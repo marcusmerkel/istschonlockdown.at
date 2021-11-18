@@ -1,0 +1,19 @@
+.container {
+  margin-top: 35vh;
+}
+
+html {
+  font-family: 'Patua One', cursive;
+}
+
+h1, h2 {
+  text-align: center;
+}
+
+h1 {
+  font-size: 10vh;
+}
+
+h2 {
+  font-size: 4vh;
+}
