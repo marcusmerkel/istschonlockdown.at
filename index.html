@@ -39,8 +39,9 @@
   document.addEventListener('DOMContentLoaded', () => {
     // let data = ["Salzburg", "Oberösterreich"];
     let data = []; // bei "jein" hier die Bundesländer spezifizieren
-    let lockdown = "nein"; // hier eingeben "ja", "jein" oder "nein"
-    let next = ["ganz Österreich"]
+    let lockdown = new Date() < new Date('11/22/2021') ? "nein" : "ja"; // hier eingeben "ja", "jein" oder "nein"
+    let next = ["ganz Österreich"];
+    let where = "In ganz Österreich.";
 
     const answer = document.querySelector('#answer');
 
@@ -64,6 +65,11 @@
       }
     } else if (lockdown === "ja") {
       answer.innerHTML = "Ja.";
+      if (where) {
+        const subtitle = document.createElement('h2');
+        subtitle.innerHTML = where;
+        document.querySelector('.container').appendChild(subtitle);
+      }
     } else if (lockdown === "nein") {
         if (next.length > 0) {
           let text = "Demnächst aber in ";
