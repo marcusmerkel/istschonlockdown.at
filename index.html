@@ -39,7 +39,7 @@
   document.addEventListener('DOMContentLoaded', () => {
     // let data = ["Salzburg", "Oberösterreich"];
     let data = []; // bei "jein" hier die Bundesländer spezifizieren
-    let lockdown = new Date() < new Date('11/22/2021') ? "nein" : "ja"; // hier eingeben "ja", "jein" oder "nein"
+    let lockdown = new Date() > new Date('12/12/2021') ? "nein" : "ja"; // hier eingeben "ja", "jein" oder "nein"
     let next = ["ganz Österreich"];
     let where = "In ganz Österreich.";
 
